@@ -1,5 +1,3 @@
-import React from 'react';
-
 const TimerControls = ({ timerOn, onStart, onStop, onReset, onLap }) => {
   return (
     <div className="timer-controls">

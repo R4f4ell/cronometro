@@ -4,7 +4,7 @@ import TimerControls from './TimerControls';
 import TimerDisplay from './TimerDisplay';
 import LapList from './LapList';
 
-import './Timer.css'
+import './timer.scss'
 
 const Timer = () => {
   const [milliseconds, setMilliseconds] = useState(0);
@@ -33,7 +33,7 @@ const Timer = () => {
   };
 
   const resetTimer = () => {
-    setMilliseconds(0); 
+    setMilliseconds(0);
     setTimerOn(false);
     setLaps([]);
   }
@@ -54,7 +54,7 @@ const Timer = () => {
 
     <div className="timer-container">
       <TimerDisplay time={formatTime()} />
-      <TimerControls 
+      <TimerControls
         timerOn={timerOn}
         onStart={() => setTimerOn(true)}
         onStop={() => setTimerOn(false)}
@@ -62,8 +62,9 @@ const Timer = () => {
         onLap={addLap}
       />
       <LapList laps={laps} />
+      
     </div>
-  
+
   );
 };
 

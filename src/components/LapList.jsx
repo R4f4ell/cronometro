@@ -1,5 +1,3 @@
-import React from 'react';
-
 const LapList = ({ laps }) => {
   return (
     <div className="timer-laps">
