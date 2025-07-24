@@ -11,6 +11,7 @@ const Timer = () => {
   const [timerOn, setTimerOn] = useState(false);
   const [laps, setLaps] = useState([]);
 
+  // Controla o início/parada do cronômetro baseado em timerOn
   useEffect(() => {
     let interval = null;
     if (timerOn) {
@@ -21,27 +22,32 @@ const Timer = () => {
     return () => stopTimer(interval);
   }, [timerOn]);
 
+   // Inicia o cronômetro
   const startTimer = (interval) => {
     return setInterval(() => {
       setMilliseconds(prevMilliseconds => prevMilliseconds + 10);
     }, 10);
   };
 
+   // Para o cronômetro
   const stopTimer = (interval) => {
     clearInterval(interval);
     return interval;
   };
 
+  // Reinicia cronômetro e limpa voltas
   const resetTimer = () => {
     setMilliseconds(0);
     setTimerOn(false);
     setLaps([]);
   }
 
+  // Adiciona uma volta formatada à lista
   const addLap = () => {
     setLaps([...laps, formatTime()]);
   };
 
+  // Formata o tempo total em mm:ss:cc
   const formatTime = () => {
     const minutes = ("0" + Math.floor((milliseconds / 60000) % 60)).slice(-2);
     const seconds = ("0" + Math.floor((milliseconds / 1000) % 60)).slice(-2);
@@ -52,8 +58,11 @@ const Timer = () => {
 
   return (
 
-    <div className="timer-container">
+    <section className="timer-container">
+      {/* Exibição do tempo atual */}
       <TimerDisplay time={formatTime()} />
+
+      {/* Botões de controle do cronômetro */}
       <TimerControls
         timerOn={timerOn}
         onStart={() => setTimerOn(true)}
@@ -61,9 +70,11 @@ const Timer = () => {
         onReset={resetTimer}
         onLap={addLap}
       />
+
+      {/* Lista de voltas registradas */}
       <LapList laps={laps} />
       
-    </div>
+    </section>
 
   );
 };

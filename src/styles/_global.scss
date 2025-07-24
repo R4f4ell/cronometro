@@ -5,4 +5,8 @@ body{
     justify-content: center;
     background: variables.$bg-color-body;
     height: 100vh;
+
+    main{
+        margin-top: 50px;
+    }
 }

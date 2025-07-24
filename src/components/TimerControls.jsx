@@ -1,10 +1,17 @@
 const TimerControls = ({ timerOn, onStart, onStop, onReset, onLap }) => {
   return (
     <div className="timer-controls">
-      {!timerOn && <button onClick={onStart}>Iniciar</button>}
-      {timerOn && <button onClick={onStop}>Parar</button>}
-      {timerOn && <button onClick={onLap}>Volta</button>}
-      <button onClick={onReset}>Zerar</button>
+      {/* Botão iniciar */}
+      {!timerOn && <button onClick={onStart} aria-label="Iniciar o cronômetro">Iniciar</button>}
+
+      {/* Botão parar */}
+      {timerOn && <button onClick={onStop} aria-label="Parar o cronômetro">Parar</button>}
+
+      {/* Botão volta */}
+      {timerOn && <button onClick={onLap} aria-label="Registrar volta">Volta</button>}
+
+      {/* Botão zerar */}
+      <button onClick={onReset} aria-label="Zerar o cronômetro">Zerar</button>
     </div>
   )
 };

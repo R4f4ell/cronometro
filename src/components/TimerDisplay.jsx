@@ -1,7 +1,7 @@
 const TimerDisplay = ({ time }) => {
   return (
     <div className="timer-display">
-      {time}
+      {time} {/* Exibe o tempo formatado */}
     </div>
   )
 };
