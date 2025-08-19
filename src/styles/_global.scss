@@ -1,12 +1,17 @@
 @use './variables';
 
-body{
-    display: flex;
-    justify-content: center;
-    background: variables.$bg-color-body;
-    height: 100vh;
+body {
+  display: flex;
+  align-items: center;     
+  justify-content: center; 
+  background: variables.$bg-color-body;
+  height: 100vh;
+  margin: 0;
 
-    main{
-        margin-top: 50px;
-    }
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
 }
