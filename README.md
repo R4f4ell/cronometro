@@ -15,5 +15,5 @@ Aplicativo de cronômetro com funcionalidade de voltas, desenvolvido em React + 
 - Acessibilidade melhorada com navegação por teclado, role="timer" e aria-live no display e botões com aria-label descritivo
 
 ## 🔗 Links
-- Projeto online: https://cronometro-devr4f4ell.vercel.app
+- Projeto online: https://cronometro.rafaelldev.com
 - Código-fonte: https://github.com/R4f4ell/cronometro
