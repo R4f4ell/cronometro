@@ -1,9 +1,11 @@
-const TimerDisplay = ({ time }) => {
+export default function TimerDisplay({ time }) {
   return (
-    <div className="timer-display">
-      {time} {/* Exibe o tempo formatado */}
-    </div>
+    <output 
+      className="timer-display"
+      role="timer" 
+      aria-live="polite"
+    >
+      {time}
+    </output>
   )
-};
-
-export default TimerDisplay;
+}

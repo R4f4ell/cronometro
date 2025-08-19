@@ -1,19 +1,17 @@
-const TimerControls = ({ timerOn, onStart, onStop, onReset, onLap }) => {
+export default function TimerControls({ timerOn, onStart, onStop, onReset, onLap }) {
   return (
     <div className="timer-controls">
-      {/* Botão iniciar */}
+      {/* aparece "Iniciar" quando não tá rodando */}
       {!timerOn && <button onClick={onStart} aria-label="Iniciar o cronômetro">Iniciar</button>}
 
-      {/* Botão parar */}
+      {/* se tiver rodando, mostra "Parar" */}
       {timerOn && <button onClick={onStop} aria-label="Parar o cronômetro">Parar</button>}
 
-      {/* Botão volta */}
+      {/* só dá pra marcar volta enquanto tá rodando */}
       {timerOn && <button onClick={onLap} aria-label="Registrar volta">Volta</button>}
 
-      {/* Botão zerar */}
+      {/* reset sempre aparece */}
       <button onClick={onReset} aria-label="Zerar o cronômetro">Zerar</button>
     </div>
   )
-};
-
-export default TimerControls;
+}
