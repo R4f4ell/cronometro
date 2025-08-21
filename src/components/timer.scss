@@ -138,10 +138,11 @@
       }
     }
 
-    ol {
-      list-style: decimal inside;
+    ul {
+      
       display: flex;
       flex-direction: column;
+      list-style: none;
       padding: 0;
       margin: 0;
       border-radius: variables.$radius-md;

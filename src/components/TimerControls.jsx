@@ -10,8 +10,8 @@ export default function TimerControls({ timerOn, onStart, onStop, onReset, onLap
       {/* só dá pra marcar volta enquanto tá rodando */}
       {timerOn && <button onClick={onLap} aria-label="Registrar volta">Volta</button>}
 
-      {/* reset sempre aparece */}
-      <button onClick={onReset} aria-label="Zerar o cronômetro">Zerar</button>
+      {/* reset só aparece quando já iniciou */}
+      {timerOn && <button onClick={onReset} aria-label="Zerar o cronômetro">Zerar</button>}
     </div>
   )
 }
