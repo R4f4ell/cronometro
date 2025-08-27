@@ -1,4 +1,3 @@
-// Hook responsável pela lógica do cronômetro
 // Ele controla o tempo em milissegundos e os estados de start/stop/reset
 import { useCallback, useEffect, useRef, useState } from "react"
 
@@ -9,7 +8,7 @@ export function useTimer(intervalMs = 10) {
 
   // iniciar
   const start = useCallback(() => {
-    if (intervalRef.current) return // já está rodando
+    if (intervalRef.current) return 
     setRunning(true)
     intervalRef.current = setInterval(() => {
       setMs((prev) => prev + intervalMs)
